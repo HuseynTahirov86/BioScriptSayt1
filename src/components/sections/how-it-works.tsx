@@ -40,8 +40,8 @@ export function HowItWorks() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   return (
@@ -67,15 +67,15 @@ export function HowItWorks() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 300 } }}
+              whileHover={{ y: -8, scale: 1.05, transition: { type: 'spring', stiffness: 300 } }}
             >
-              <Card className="h-full text-center shadow-sm transition-shadow duration-300 hover:shadow-xl">
+              <Card className="h-full text-center shadow-sm transition-shadow duration-300 hover:shadow-xl glass-card">
                 <CardHeader className="items-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     {step.icon}
                   </div>
                   <CardTitle>{step.title}</CardTitle>
-                  <CardDescription className="mt-2">{step.description}</CardDescription>
+                  <CardDescription className="mt-2 text-foreground/80">{step.description}</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>

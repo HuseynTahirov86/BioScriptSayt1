@@ -43,15 +43,14 @@ export function Advantages() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        duration: 0.5,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
   return (
@@ -77,7 +76,7 @@ export function Advantages() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 300 } }}
+              whileHover={{ y: -8, scale: 1.05, transition: { type: 'spring', stiffness: 300 } }}
             >
               <Card className="h-full glass-card shadow-sm transition-shadow hover:shadow-xl">
                 <CardHeader className="items-center text-center">

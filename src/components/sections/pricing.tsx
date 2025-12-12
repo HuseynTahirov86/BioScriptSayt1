@@ -66,8 +66,8 @@ export function Pricing() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
   return (
@@ -93,7 +93,7 @@ export function Pricing() {
             <motion.div
               key={tier.name}
               variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.02, transition: { type: 'spring', stiffness: 300 } }}
+              whileHover={{ y: -8, scale: 1.05, transition: { type: 'spring', stiffness: 300 } }}
               className="h-full"
             >
               <Card className={`glass-card flex h-full flex-col transition-all duration-300 ${tier.popular ? 'border-primary' : ''}`}>
