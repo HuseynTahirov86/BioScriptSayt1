@@ -78,23 +78,11 @@ export function Header() {
                     <Button asChild>
                       <Link href="/request-demo" onClick={handleLinkClick}>Demo Tələb Et</Link>
                     </Button>
-                    <Button asChild variant="outline">
-                        <Link href="https://email.bioscript.shop" target="_blank">E-Poçt</Link>
-                    </Button>
-                    <Button asChild variant="outline">
-                        <Link href="https://admin.bioscript.shop" target="_blank">Admin Panel</Link>
-                    </Button>
                 </div>
               </div>
             </SheetContent>
           </Sheet>
           <div className="hidden items-center space-x-2 md:flex">
-              <Button asChild variant="secondary">
-                <Link href="https://email.bioscript.shop" target="_blank">E-Poçt</Link>
-              </Button>
-              <Button asChild variant="secondary">
-                <Link href="https://admin.bioscript.shop" target="_blank">Admin Panel</Link>
-              </Button>
               <Button asChild>
                 <Link href="/request-demo">Demo Tələb Et</Link>
               </Button>
