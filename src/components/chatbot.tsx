@@ -99,7 +99,7 @@ export function Chatbot() {
             className="fixed bottom-20 right-4 z-50 w-full max-w-sm"
             style={{ transformOrigin: 'bottom right' }}
           >
-            <Card className="flex h-[60vh] flex-col">
+            <Card className="flex h-[60vh] flex-col glass-card">
               <CardHeader className="flex-row items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Avatar>
@@ -121,7 +121,7 @@ export function Chatbot() {
                       >
                         {message.role === 'ai' && (
                           <Avatar className="h-8 w-8">
-                             <AvatarFallback><Bot size={20}/></AvatarFallback>
+                             <AvatarFallback className='bg-background'><Bot size={20}/></AvatarFallback>
                           </Avatar>
                         )}
                         <div
@@ -136,7 +136,7 @@ export function Chatbot() {
                         </div>
                          {message.role === 'user' && (
                           <Avatar className="h-8 w-8">
-                             <AvatarFallback><User size={20}/></AvatarFallback>
+                             <AvatarFallback className='bg-background'><User size={20}/></AvatarFallback>
                           </Avatar>
                         )}
                       </div>
@@ -144,7 +144,7 @@ export function Chatbot() {
                     {isLoading && (
                        <div className="flex items-start gap-3 justify-start">
                           <Avatar className="h-8 w-8">
-                             <AvatarFallback><Bot size={20}/></AvatarFallback>
+                             <AvatarFallback className='bg-background'><Bot size={20}/></AvatarFallback>
                           </Avatar>
                           <div className="bg-muted rounded-lg px-4 py-2 text-sm">
                               <div className="flex items-center space-x-1">

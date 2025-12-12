@@ -96,13 +96,13 @@ export function Pricing() {
               whileHover={{ y: -8, scale: 1.02, transition: { type: 'spring', stiffness: 300 } }}
               className="h-full"
             >
-              <Card className={`glass-card flex h-full flex-col transition-all duration-300 ${tier.popular ? 'border-primary' : 'hover:border-primary/50'}`}>
+              <Card className={`glass-card flex h-full flex-col transition-all duration-300 ${tier.popular ? 'border-primary' : ''}`}>
                 {tier.popular && (
                   <div className="bg-primary text-primary-foreground text-center text-sm font-bold py-1 rounded-t-lg">Populyar</div>
                 )}
                 <CardHeader>
                   <CardTitle>{tier.name}</CardTitle>
-                  <CardDescription>{tier.initialPayment}</CardDescription>
+                  <CardDescription className="text-foreground/80">{tier.initialPayment}</CardDescription>
                   {tier.monthlyPayment && (
                     <div className="flex items-baseline">
                       <p className="text-xl font-bold">{tier.monthlyPayment}</p>

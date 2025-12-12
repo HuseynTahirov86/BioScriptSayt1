@@ -75,7 +75,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="az" className="dark" style={{ colorScheme: 'dark' }}>
+    <html lang="az">
       <head>
         <script
           type="application/ld+json"

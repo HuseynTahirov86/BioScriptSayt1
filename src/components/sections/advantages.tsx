@@ -57,7 +57,7 @@ export function Advantages() {
   return (
     <motion.section
       id="advantages"
-      className="border-t bg-white"
+      className="border-t"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -79,13 +79,13 @@ export function Advantages() {
               variants={itemVariants}
               whileHover={{ y: -5, transition: { type: 'spring', stiffness: 300 } }}
             >
-              <Card className="h-full shadow-sm transition-shadow hover:shadow-xl">
+              <Card className="h-full glass-card shadow-sm transition-shadow hover:shadow-xl">
                 <CardHeader className="items-center text-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     {advantage.icon}
                   </div>
                   <CardTitle>{advantage.title}</CardTitle>
-                  <CardDescription className="mt-2">{advantage.description}</CardDescription>
+                  <CardDescription className="mt-2 text-foreground/80">{advantage.description}</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>

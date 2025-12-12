@@ -63,7 +63,7 @@ export function Blog({ blogPosts, showTitle = true, showViewAllButton = false }:
                 whileHover={{ y: -8, transition: { type: 'spring', stiffness: 300 } }}
                 className="h-full"
               >
-                <Card className="glass-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:border-primary/50">
+                <Card className="glass-card group flex h-full flex-col overflow-hidden transition-all duration-300">
                   <Link href={`/blog/${post.slug}`} aria-label={post.title} className="overflow-hidden">
                     <img
                       src={post.image}

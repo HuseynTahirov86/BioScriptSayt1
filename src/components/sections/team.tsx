@@ -29,7 +29,7 @@ export async function Team() {
   const teamMembers = await getTeamMembers();
 
   return (
-    <section id="team" className="border-t bg-white">
+    <section id="team" className="border-t">
       <div className="container mx-auto space-y-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -43,7 +43,7 @@ export async function Team() {
         {teamMembers.length > 0 && (
           <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member) => (
-              <Card key={member.id} className="group w-full max-w-xs overflow-hidden text-center shadow-sm transition-shadow duration-300 hover:shadow-xl sm:w-auto sm:max-w-none sm:flex-1 sm:min-w-[250px] lg:max-w-xs">
+              <Card key={member.id} className="group w-full max-w-xs overflow-hidden text-center glass-card shadow-sm transition-shadow duration-300 hover:shadow-xl sm:w-auto sm:max-w-none sm:flex-1 sm:min-w-[250px] lg:max-w-xs">
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={member.image}

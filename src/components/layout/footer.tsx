@@ -12,7 +12,7 @@ export function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="border-t border-white/10 bg-background/50"
+      className="border-t bg-background/50"
     >
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
@@ -58,7 +58,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} BioScript. Bütün hüquqlar qorunur.</p>
         </div>
       </div>

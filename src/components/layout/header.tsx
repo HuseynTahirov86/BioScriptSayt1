@@ -31,7 +31,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/50 backdrop-blur-xl"
+      className="sticky top-0 z-50 w-full border-b bg-background/50 backdrop-blur-xl"
     >
       <div className="container flex h-24 max-w-screen-2xl items-center">
         <div className="mr-4 flex">

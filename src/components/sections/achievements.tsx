@@ -71,7 +71,7 @@ export function Achievements() {
               whileHover={{ y: -8, transition: { type: 'spring', stiffness: 300 } }}
               className="h-full"
             >
-              <Card className="glass-card flex h-full flex-col transition-all duration-300 hover:border-primary/50">
+              <Card className="glass-card flex h-full flex-col transition-all duration-300">
                 <CardHeader className="items-center text-center">
                   <div className="rounded-full bg-primary/10 p-3">
                     {item.icon}
