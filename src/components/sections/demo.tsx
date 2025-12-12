@@ -51,7 +51,7 @@ export function Demo() {
   return (
     <motion.section
       id="demo"
-      className="border-t bg-white"
+      className="border-t"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -59,7 +59,7 @@ export function Demo() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <Card>
+          <Card className="glass-card">
             <CardHeader className="text-center">
               <CardTitle className="font-headline text-3xl font-bold sm:text-4xl">
                 Platformanı Kəşf Edin

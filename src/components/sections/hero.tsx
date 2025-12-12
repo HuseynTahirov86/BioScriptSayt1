@@ -21,9 +21,10 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="animated-gradient-bg">
+    <section id="home" className="relative overflow-hidden">
+      <div className="absolute inset-0 animated-gradient-bg -z-10"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
+        <div className="grid min-h-[calc(100vh-6rem)] items-center gap-8 lg:grid-cols-2">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -32,7 +33,7 @@ export function Hero() {
           >
             <motion.h1
               variants={itemVariants}
-              className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+              className="font-headline text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
             >
               Səhiyyə Barmağınızın Ucundadır!
             </motion.h1>
@@ -56,23 +57,21 @@ export function Hero() {
             </motion.div>
           </motion.div>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0, scale: 0.95 },
-              visible: { opacity: 1, scale: 1 },
-            }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center"
           >
-            <img
-              src="https://i.hizliresim.com/slj4kwk.png"
-              alt="BioScript Platforması"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-2xl"
-            />
+            <div className="relative">
+              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-accent opacity-25 blur-2xl"></div>
+              <img
+                src="https://i.hizliresim.com/slj4kwk.png"
+                alt="BioScript Platforması"
+                width={600}
+                height={400}
+                className="relative rounded-xl shadow-2xl"
+              />
+            </div>
           </motion.div>
         </div>
       </div>

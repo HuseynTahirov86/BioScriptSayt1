@@ -24,20 +24,20 @@ export function Blog({ blogPosts, showTitle = true, showViewAllButton = false }:
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.5,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
   return (
     <motion.section
       id="blog"
-      className={cn("border-t bg-white", !showTitle && "pt-12 pb-12 md:pb-24 lg:pb-32")}
+      className={cn("border-t", !showTitle && "py-16 md:py-24 lg:py-32")}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -60,17 +60,17 @@ export function Blog({ blogPosts, showTitle = true, showViewAllButton = false }:
               <motion.div
                 key={post.id}
                 variants={itemVariants}
-                whileHover={{ y: -5, transition: { type: 'spring', stiffness: 300 } }}
+                whileHover={{ y: -8, transition: { type: 'spring', stiffness: 300 } }}
                 className="h-full"
               >
-                <Card className="flex h-full flex-col overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-xl">
-                  <Link href={`/blog/${post.slug}`} aria-label={post.title}>
+                <Card className="glass-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:border-primary/50">
+                  <Link href={`/blog/${post.slug}`} aria-label={post.title} className="overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.title}
                       width={400}
                       height={250}
-                      className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="h-auto w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                     />
                   </Link>
                   <CardHeader>
@@ -79,7 +79,7 @@ export function Blog({ blogPosts, showTitle = true, showViewAllButton = false }:
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground">{post.excerpt}</p>
+                    <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
                   </CardContent>
                   <CardFooter>
                     <Button asChild variant="link" className="p-0">
@@ -91,10 +91,10 @@ export function Blog({ blogPosts, showTitle = true, showViewAllButton = false }:
                 </Card>
               </motion.div>
             ))
-          ) : (
+          ) : isDataLoaded && blogPosts.length === 0 ? null : (
             Array.from({ length: 3 }).map((_, i) => (
               <motion.div key={i} variants={itemVariants}>
-                <Card className="flex h-full flex-col overflow-hidden shadow-sm">
+                <Card className="glass-card flex h-full flex-col overflow-hidden">
                   <Skeleton className="h-[250px] w-full" />
                   <CardHeader>
                     <Skeleton className="h-6 w-3/4" />

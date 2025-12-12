@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -31,7 +31,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/50 backdrop-blur-xl"
     >
       <div className="container flex h-24 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
@@ -58,7 +58,7 @@ export function Header() {
                 <span className="sr-only">Menyu aç</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="glass-card border-r">
               <div className="flex flex-col p-6">
                 <Link href="/" className="mb-8" onClick={handleLinkClick}>
                   <Logo />
@@ -90,10 +90,10 @@ export function Header() {
             </SheetContent>
           </Sheet>
           <div className="hidden items-center space-x-2 md:flex">
-              <Button asChild variant="outline">
+              <Button asChild variant="secondary">
                 <Link href="https://email.bioscript.shop" target="_blank">E-Poçt</Link>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="secondary">
                 <Link href="https://admin.bioscript.shop" target="_blank">Admin Panel</Link>
               </Button>
               <Button asChild>

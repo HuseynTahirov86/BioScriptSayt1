@@ -75,7 +75,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="az" suppressHydrationWarning>
+    <html lang="az" className="dark" style={{ colorScheme: 'dark' }}>
       <head>
         <script
           type="application/ld+json"
@@ -88,7 +88,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
           rel="stylesheet"
         ></link>
       </head>

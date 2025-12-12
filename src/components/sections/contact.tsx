@@ -55,20 +55,20 @@ export function Contact() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.5,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
   return (
     <motion.section
       id="contact"
-      className="border-t bg-white"
+      className="border-t"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -102,7 +102,7 @@ export function Contact() {
             </div>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <Card>
+            <Card className="glass-card">
               <CardHeader>
                 <CardTitle>Mesaj Göndərin</CardTitle>
                 <CardDescription>Komandamız qısa zamanda sizinlə əlaqə saxlayacaq.</CardDescription>
