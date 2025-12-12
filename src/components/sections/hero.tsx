@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
 
 export function Hero() {
   const containerVariants = {
@@ -22,7 +21,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="bg-white">
+    <section id="home" className="animated-gradient-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <motion.div
@@ -44,19 +43,6 @@ export function Hero() {
               Səhiyyənin gələcəyini biometriya ilə təmin edən BioScript, resept təhlükəsizliyini barmaq izi ilə artırır, sui-istifadənin qarşısını alır və bütün prosesləri rəqəmsallaşdırır.
             </motion.p>
             
-            <motion.div variants={itemVariants} className="mt-8">
-                <Card className="bg-amber-50 border-amber-200">
-                    <CardContent className="p-4 text-center text-amber-900">
-                        <p className="mb-2">
-                           🎓 Layihə rəhbərinin təhsil öhdəlikləri səbəbindən BioScript komandası 2025-ci ilin avqustundan 2026-cı ilin avqustuna qədər müvəqqəti fasiləyə çıxır.
-                        </p>
-                        <p className="font-medium">
-                           🙏 Göstərdiyiniz dəstək üçün təşəkkür edir, 2 avqust 2026-cı ildə yenidən sizinlə olmağı səbirsizliklə gözləyirik.
-                        </p>
-                    </CardContent>
-                </Card>
-            </motion.div>
-
             <motion.div
               variants={itemVariants}
               className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start"
