@@ -1,19 +1,16 @@
+
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Hero } from '@/components/sections/hero';
-import { Achievements } from '@/components/sections/achievements';
-import { Partners } from '@/components/sections/partners';
 import { Blog } from '@/components/sections/blog';
-import { Chatbot } from '@/components/chatbot';
+import type { Metadata } from 'next';
 import type { BlogPost } from '@/lib/data';
 import { db } from '@/lib/firebase';
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 
-
-async function getRecentBlogPosts(): Promise<BlogPost[]> {
+async function getBlogPosts(): Promise<BlogPost[]> {
     try {
         const postsCollection = collection(db, 'blog');
-        const q = query(postsCollection, orderBy('date', 'desc'), limit(3));
+        const q = query(postsCollection, orderBy('date', 'desc'));
         const postsSnapshot = await getDocs(q);
         
         return postsSnapshot.docs.map(doc => {
@@ -32,26 +29,31 @@ async function getRecentBlogPosts(): Promise<BlogPost[]> {
         if (error instanceof Error && error.message.toLowerCase().includes('permission-denied')) {
              console.error(`Firestore Permission Denied. Ensure Firestore API is enabled for project '${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}'. Visit: https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}`);
         } else {
-            console.error("Error fetching blog posts for home page:", error);
+            console.error("Error fetching blog posts:", error);
         }
         return [];
     }
 }
 
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'BioScript bloqunda səhiyyə texnologiyaları, biometrik təhlükəsizlik və rəqəmsal səhiyyə ilə bağlı ən son məqalələri və yenilikləri oxuyun.',
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+      images: ['https://i.hizliresim.com/slj4kwk.png'],
+  },
+};
 
-export default async function Home() {
-  const recentPosts = await getRecentBlogPosts();
-
+export default async function BlogPage() {
+  const posts = await getBlogPosts();
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Achievements />
-        <Partners />
-        <Blog blogPosts={recentPosts} showTitle={true} showViewAllButton={true} />
+        <Blog blogPosts={posts} />
       </main>
-      <Chatbot />
       <Footer />
     </div>
   );
