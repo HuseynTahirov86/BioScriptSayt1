@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 export const Logo = ({ className }: { className?: string }) => {
   return (
     <Image
-      src="https://old.bioscript.shop/wp-content/uploads/2025/03/cropped-BioScript-1-1536x614.png"
+      src="/logo.png"
       alt="BioScript Logo"
       width={250}
       height={100}
